@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML 제목 - 주택상세정보- 생에최초주택구매자</title>
+  <meta charset="utf-8">
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+<h1>주택상세정보</h1>
+
+<form name="output">
+  <h1>대출용도</h1>
+  <p>대출용도를 선택해주세요</p>
+  <p>
+    <input type="radio" name="test" value="bank1" checked> 구입자금
+    <input type="radio" name="test" value="bank2">         생활자금
+    <input type="radio" name="test" value="bank3">         대환자금
+    <input type="radio" name="test" value="bank4">         전세보증금반환
+  </p>
+
+  <hr/>
+
+  <p>대출용도를 선택해주세요</p>
+  <p>
+    <input type="radio" name="test1" value="bank5" checked> 생에최초구입
+    <input type="radio" name="test1" value="bank6">         구입경험있음
+  </p>
+
+  <button type="button" name="button" id="nextBtn">다음</button>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+  $(document).ready(function (){
+    $("#nextBtn").click(function (){
+      $("form[name=output]").attr({action:"http://localhost:8009/radio/testOutput"}).submit();
+      //window.location.href = "testOutput.html"
+    });
+  });
+
+
+</script>
